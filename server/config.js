@@ -6,6 +6,8 @@ const currentDir = dirname(fileURLToPath(url));
 const rootDir = join(currentDir, "../");
 
 const audioDirectory = join(rootDir, "audio");
+const songsDirectory = join(audioDirectory, "songs");
+const fxDirectory = join(audioDirectory, "fx");
 const publicDirectory = join(rootDir, "public"); // static pages
 
 export default {
@@ -13,8 +15,8 @@ export default {
   dir: {
     rootDir,
     audioDirectory,
-    fxDirectory: join(audioDirectory, "fx"),
-    songsDirectory: join(audioDirectory, "songs"),
+    fxDirectory,
+    songsDirectory,
     publicDirectory,
   },
   pages: {
@@ -30,5 +32,10 @@ export default {
       ".css": "text/css",
       ".js": "text/javascript",
     },
+    audioMediaType: "mp3",
+    songVolume: "0.99",
+    fallbackBitRate: "128000",
+    bitRateDivisor: 8,
+    englishConversation: join(songsDirectory, "conversation.mp3"),
   },
 };

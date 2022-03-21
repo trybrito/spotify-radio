@@ -1,0 +1,17 @@
+version: "3"
+services:
+  app:
+    build: .
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    environment:
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    command: yarn dev
+    volumes:
+      - .:/spotify-radio
+      - node_modules:/spotify-radio/node_modules
+volumes:
+  node_modules: {}

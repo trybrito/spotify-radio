@@ -175,7 +175,7 @@
           preload="none"
           controls
           autoplay
-          src="./home/../home/../home/audio/songs/conversation.mp3"
+          src="/stream"
         ></audio>
 
         <div class="player-controls">
@@ -201,6 +201,13 @@
       <i class="fas fa-volume-up"></i>
       <p>Listening on Erick Wendel</p>
     </div>
+
     <script src="./home/js/animation.js"></script>
+    <script>
+      // bypass to prevent browser caching
+      window.onload = () => {
+        document.getElementById("audio").src = "/stream?id=" + Date.now();
+      };
+    </script>
   </body>
 </html>
